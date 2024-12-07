@@ -1,6 +1,8 @@
 package com.mss.BackendWorkers.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +21,6 @@ public class Foto {
 
     @ManyToOne
     @JoinColumn(name = "trabajador_dni", nullable = false)
-    @JsonIgnore
+    @JsonBackReference
     private Trabajador trabajador;
 }

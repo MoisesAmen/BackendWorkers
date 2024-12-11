@@ -29,6 +29,12 @@ public class TrabajadorController {
         return service.obtenerPorDni(dni);
     }
 
+    @GetMapping("/existe/{dni}")
+    public boolean existePorDni(@PathVariable String dni) {
+        Trabajador trabajador = service.obtenerPorDni(dni);
+        return trabajador != null;
+    }
+
     @DeleteMapping("/{dni}")
     public void eliminar(@PathVariable String dni) {
         service.eliminar(dni);

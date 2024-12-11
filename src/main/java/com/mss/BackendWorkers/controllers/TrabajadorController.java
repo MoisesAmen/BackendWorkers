@@ -35,6 +35,7 @@ public class TrabajadorController {
         return trabajador != null;
     }
 
+
     @DeleteMapping("/{dni}")
     public void eliminar(@PathVariable String dni) {
         service.eliminar(dni);
